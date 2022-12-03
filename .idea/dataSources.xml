@@ -4,9 +4,9 @@
     <data-source source="LOCAL" name="postgres@localhost" uuid="559d3362-cb64-4505-b746-209814306d6f">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
-      <remarks>postgres / Welcome</remarks>
+      <remarks>postgres / mysecret</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/postgres?currentSchema=java_persistence</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5433/postgres?currentSchema=java_persistence</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
