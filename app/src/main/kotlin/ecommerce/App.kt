@@ -3,11 +3,11 @@
  */
 package ecommerce
 
+import jakarta.persistence.Entity
+import jakarta.persistence.GeneratedValue
+import jakarta.persistence.Id
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder
 import org.hibernate.cfg.Configuration
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
 
 class App {
     val greeting: String
