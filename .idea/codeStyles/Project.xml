@@ -3,6 +3,10 @@
     <JetCodeStyleSettings>
       <option name="LINE_BREAK_AFTER_MULTILINE_WHEN_ENTRY" value="false" />
       <option name="NAME_COUNT_TO_USE_STAR_IMPORT" value="3" />
+      <option name="CONTINUATION_INDENT_IN_PARAMETER_LISTS" value="false" />
+      <option name="CONTINUATION_INDENT_IN_ARGUMENT_LISTS" value="false" />
+      <option name="CONTINUATION_INDENT_FOR_CHAINED_CALLS" value="false" />
+      <option name="CONTINUATION_INDENT_IN_SUPERTYPE_LISTS" value="false" />
     </JetCodeStyleSettings>
     <codeStyleSettings language="kotlin">
       <option name="KEEP_FIRST_COLUMN_COMMENT" value="false" />
