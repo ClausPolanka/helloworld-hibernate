@@ -3,18 +3,14 @@
  */
 package ecommerce
 
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.Id
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder
-import org.hibernate.cfg.Configuration
+import jakarta.persistence.*
 
 class App {
     val greeting: String
         get() {
-            val config = Configuration()
+            val config = org.hibernate.cfg.Configuration()
             config.configure().addAnnotatedClass(Message::class.java)
-            val serviceRegistry = StandardServiceRegistryBuilder()
+            val serviceRegistry = org.hibernate.boot.registry.StandardServiceRegistryBuilder()
                 .applySettings(config.properties)
                 .build()
             val sf = config.buildSessionFactory(serviceRegistry)
@@ -32,6 +28,7 @@ class App {
                 messages = s.createQuery(c).resultList
                 s.transaction.commit()
             }
+            messages.forEach { println(it) }
             return "Hello World! number of messages: '${messages.size}'"
         }
 }
@@ -45,5 +42,9 @@ class Message(
     @Id
     @GeneratedValue
     val id: Long? = null,
-    var text: String,
-)
+    val text: String,
+) {
+    override fun toString(): String {
+        return "Message(id=$id, text='$text')"
+    }
+}
