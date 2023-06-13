@@ -40,7 +40,9 @@ fun main() {
 
 @Entity
 class Message(
-    @Id @GeneratedValue val id: Long? = null,
+    @Id
+    @GeneratedValue
+    val id: Long? = null,
     val text: String,
 ) {
     override fun toString(): String {
