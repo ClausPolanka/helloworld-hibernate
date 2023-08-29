@@ -37,3 +37,9 @@ dependencies {
 application {
     mainClass = 'helloworldhibernate.AppKt'
 }
+
+test {
+    useJUnitPlatform()
+    testLogging.showStandardStreams = true
+    testLogging.exceptionFormat = 'full'
+}
