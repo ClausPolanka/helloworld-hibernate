@@ -1,7 +1,7 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.9.10'
+    id 'org.jetbrains.kotlin.jvm' version '1.9.20-Beta'
     id 'application'
-    id 'org.jetbrains.kotlin.plugin.jpa' version '1.9.10'
+    id 'org.jetbrains.kotlin.plugin.jpa' version '1.9.20-Beta'
 
     // Plugin which allows to check for new dependency versions.
     // Can be called with: `./gradlew dependencyUpdates`
@@ -29,11 +29,17 @@ dependencies {
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
 
     // My dependencies
-    implementation 'org.hibernate:hibernate-core:6.3.0.CR1'
+    implementation 'org.hibernate:hibernate-core:6.3.0.Final'
     implementation 'org.postgresql:postgresql:42.6.0'
-    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.10.0-M1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
 }
 
 application {
     mainClass = 'helloworldhibernate.AppKt'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging.showStandardStreams = true
+    testLogging.exceptionFormat = 'full'
 }
