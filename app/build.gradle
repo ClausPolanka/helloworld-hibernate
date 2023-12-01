@@ -35,11 +35,14 @@ dependencies {
     implementation 'org.postgresql:postgresql:42.7.3'
     testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
 
+    // Liquibase necessary runtime dependencies
+    // Inspired by https://contribute.liquibase.com/extensions-integrations/directory/integration-docs/gradle/
     liquibaseRuntime 'org.liquibase:liquibase-core:4.25.0'
 
     // Needed by org.liquibase:liquibase-core
     liquibaseRuntime 'info.picocli:picocli:4.7.5'
     liquibaseRuntime 'org.postgresql:postgresql:42.7.0'
+    // End of liquibase dependencies section
 }
 
 application {
@@ -52,13 +55,11 @@ test {
     testLogging.exceptionFormat = 'full'
 }
 
+// Inspired by https://contribute.liquibase.com/extensions-integrations/directory/integration-docs/gradle/
 liquibase {
     activities {
         main {
-            changelogFile 'db/migrations/dbchangelog.sql'
-            url 'jdbc:postgresql://localhost:5433/postgres?currentSchema=helloworld-hibernate-native'
-            username 'postgres'
-            password 'mysecret'
+            defaultsFile "liquibase.properties"
         }
     }
 }
