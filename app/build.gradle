@@ -41,7 +41,7 @@ dependencies {
 
     // Needed by org.liquibase:liquibase-core
     liquibaseRuntime 'info.picocli:picocli:4.7.5'
-    liquibaseRuntime 'org.postgresql:postgresql:42.7.0'
+    liquibaseRuntime 'org.postgresql:postgresql:42.7.1'
     // End of liquibase dependencies section
 }
 
