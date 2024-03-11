@@ -30,7 +30,7 @@ dependencies {
 
     // My dependencies
     implementation 'org.hibernate:hibernate-core:6.4.4.Final'
-    implementation 'org.postgresql:postgresql:42.7.1'
+    implementation 'org.postgresql:postgresql:42.7.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.10.1'
 }
 
