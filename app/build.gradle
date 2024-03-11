@@ -8,6 +8,8 @@ plugins {
     id 'com.github.ben-manes.versions' version '0.51.0'
 
     id 'idea'
+
+    id 'org.liquibase.gradle' version '2.2.1'
 }
 
 idea {
@@ -32,6 +34,12 @@ dependencies {
     implementation 'org.hibernate:hibernate-core:6.5.0.CR1'
     implementation 'org.postgresql:postgresql:42.7.3'
     testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
+
+    liquibaseRuntime 'org.liquibase:liquibase-core:4.25.0'
+
+    // Needed by org.liquibase:liquibase-core
+    liquibaseRuntime 'info.picocli:picocli:4.7.5'
+    liquibaseRuntime 'org.postgresql:postgresql:42.7.0'
 }
 
 application {
@@ -42,4 +50,15 @@ test {
     useJUnitPlatform()
     testLogging.showStandardStreams = true
     testLogging.exceptionFormat = 'full'
+}
+
+liquibase {
+    activities {
+        main {
+            changelogFile 'db/migrations/dbchangelog.sql'
+            url 'jdbc:postgresql://localhost:5433/postgres?currentSchema=helloworld-hibernate-native'
+            username 'postgres'
+            password 'mysecret'
+        }
+    }
 }
