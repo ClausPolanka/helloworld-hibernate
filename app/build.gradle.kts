@@ -25,7 +25,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
     // My dependencies
-    implementation("org.hibernate:hibernate-core:6.6.2.Final")
+    implementation("org.hibernate:hibernate-core:7.0.0.Beta2")
     implementation("org.postgresql:postgresql:42.7.4")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.11.3")
 }
