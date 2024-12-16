@@ -1,7 +1,7 @@
 plugins {
-    kotlin("jvm") version "2.1.0-RC"
+    kotlin("jvm") version "2.1.0"
     application
-    kotlin("plugin.jpa") version "2.1.0-RC"
+    kotlin("plugin.jpa") version "2.1.0"
     id("com.github.ben-manes.versions") version "0.51.0"
     idea
 }
