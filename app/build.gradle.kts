@@ -27,7 +27,7 @@ dependencies {
     // My dependencies
     implementation("org.hibernate:hibernate-core:7.0.0.Beta3")
     implementation("org.postgresql:postgresql:42.7.4")
-    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.11.3")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.11.4")
 }
 
 application {
